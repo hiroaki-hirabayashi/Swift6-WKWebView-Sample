@@ -19,21 +19,31 @@
                                 <rect key="frame" x="1" y="749" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="←" id="31K-D9-gTl">
+                                    <barButtonItem title="Item" image="chevron.left" catalog="system" id="31K-D9-gTl">
                                         <connections>
-                                            <action selector="backButton:" destination="BYZ-38-t0r" id="1uG-iR-cDs"/>
+                                            <action selector="backButtonTapped:" destination="BYZ-38-t0r" id="V6F-iz-sYB"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="hth-68-tyf"/>
-                                    <barButtonItem title="→" id="CBO-6S-azy">
+                                    <barButtonItem title="Item" image="arrow.counterclockwise" catalog="system" id="QwP-7n-YhW">
                                         <connections>
-                                            <action selector="goButton:" destination="BYZ-38-t0r" id="aig-yk-hIy"/>
+                                            <action selector="reloadButtonTapped:" destination="BYZ-38-t0r" id="NYh-f9-bXI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="chevron.right" catalog="system" id="CBO-6S-azy">
+                                        <connections>
+                                            <action selector="forwardButtonTapped:" destination="BYZ-38-t0r" id="tgM-xI-G7s"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FXW-LU-dqb">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="DfF-4d-MOs">
-                                <rect key="frame" x="16" y="66" width="53" height="34"/>
+                                <rect key="frame" x="143" y="376" width="88" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
@@ -42,6 +52,7 @@
                     </view>
                     <connections>
                         <outlet property="indicator" destination="DfF-4d-MOs" id="tNF-Xn-Fgr"/>
+                        <outlet property="seachBar" destination="FXW-LU-dqb" id="p2u-kY-fFN"/>
                         <outlet property="toolBar" destination="rCN-5r-lLS" id="6uw-fJ-uhB"/>
                     </connections>
                 </viewController>
@@ -50,4 +61,9 @@
             <point key="canvasLocation" x="140" y="126.35467980295567"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow.counterclockwise" catalog="system" width="115" height="128"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+    </resources>
 </document>
