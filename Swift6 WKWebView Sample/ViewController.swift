@@ -26,14 +26,18 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
         super.viewDidLoad()
         webView.navigationDelegate = self
         openUrl(urlString: homeUrl)
-
+        setUpView()
+    }
+    
+    func setUpView() {
+        indicator.isHidden = true
+        webView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height - toolBar.frame.size.height)
+        view.addSubview(webView)
+        
     }
     
     // 文字列で指定されたURLをWeb Viewを開く
     func openUrl(urlString: String) {
-        indicator.isHidden = true
-        webView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height - toolBar.frame.size.height)
-        view.addSubview(webView)
         
         
         let url = URL(string: urlString)
